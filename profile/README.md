@@ -22,13 +22,15 @@ with such noted authors as Don Norman and Clayton Christensen.
 
 ### ⚙️ Developers
 
-Here, on GitHub we build with ❤️ Love our main product — online courses platform. Our main stack is:
+Here, on GitHub we build with ❤️ love our main product — online courses platform. Our main stack is:
 
  - PHP/Laravel (always latest versions)
  - Redis, MySQL
  - Horizon, Nova
- - Web Components, PostCSS (to maximise usage of native platform features)
- 
+ - Web Components, PostCSS (to maximise usage of native platform features) and Vue.js.
+
+We love to delegate boring tasks to computers (static analysers (Psalm, PHPStan, Rector), bots, scripts, testing).
+
 
 #### Materials
  - [Careers](https://www.interaction-design.org/about/careers)
