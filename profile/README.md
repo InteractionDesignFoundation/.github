@@ -1,6 +1,6 @@
 ## Hey, this is us 👋
 
-![image](profile/IxDF-github-profile.png)
+![image](https://user-images.githubusercontent.com/2339481/145277915-3b4d53a4-24a0-4e1e-afa8-abdc21bbc819.jpg)
 
 With more than 120,000 graduates, the Interaction Design Foundation is the biggest online design school globally.
 We were founded in 2002.
