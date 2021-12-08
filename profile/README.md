@@ -1,6 +1,6 @@
 ## Hey, this is us 👋
 
-<p align="center"><img src="https://public-media.interaction-design.org/images/idf-logo-full-expanded.svg" alt="In amazing things we trust" width="400"></p>
+![image](https://user-images.githubusercontent.com/5278175/145217438-3b89567e-f427-4dac-b3d0-f44307a5d796.png)
 
 
 With more than 120,000 graduates, the Interaction Design Foundation is the biggest online design school globally.
