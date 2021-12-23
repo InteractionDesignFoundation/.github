@@ -9,7 +9,7 @@ The Interaction Design Foundation (IxDF) is the biggest online design school glo
 # We're an all-remote organization with regular team trips
 We were an all-remote organization before that term even existed. We only work with paid, full-time, remote staff. We have daily video-based contact with our colleagues and meet each other physically on team trips a few times per year. You can [read more about our work culture](https://www.interaction-design.org/about/careers).
 
-# Our Main Product
+# 🏠 Our Main Product
 
 We're constantly improving and expanding our main product — a web application with online courses, bootcamps and community tools. The architecture is a multi-page application — an MVC-based, modular monolith using Laravel as a back-end framework. It was started back in 2013, and since then we’ve relentlessly increased code quality, features and test coverage, and are proud to say that we have almost zero legacy code or technical debt. We believe a modular monolithic architecture can reach a level of perfection where it’s superior to a micro-service architecture — despite an ever-increasing number of features.
 
@@ -34,7 +34,7 @@ We love to delegate boring tasks to our non-human colleagues — like static ana
  - [IxDF JavaScript Conventions](https://handbook.interaction-design.org/library/front-end/conventions--js.html)
  - [Dev handbook](https://handbook.interaction-design.org/)
 
-# Why do devs love to work with us?
+# ❤️ Why do devs love to work with us?
 
 Are you an awesome PHP developer who is looking for a truly challenging role in a growing dev team? Do you wish to use your coding superpowers for a good cause and help improve the lives of millions of people around the world? Do you want to work with a team that values your insights and contributions to a dynamic product with an exciting future? 
 
