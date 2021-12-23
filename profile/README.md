@@ -10,27 +10,32 @@ We’re market leaders in online design education because the world’s leading 
 Our courses cover the entire spectrum of UX design from beginner to advanced.
 
 
-### 🍿 Courses
+# Our Main Product
 
-Our Course Certificates are trusted by industry leaders such as IBM and Adobe who train their teams with our courses.
-Universities such as MIT and the University of Cambridge include our material in their curricula.
-
-We’ve created the world’s biggest and most authoritative library of open-source UX Design literature
-with such noted authors as Don Norman and Clayton Christensen.
+YWe're constantly improving and expanding our main product — a web application with online courses, bootcamps and community tools. The architecture is a multi-page application — an MVC-based, modular monolith using Laravel as a back-end framework. It was started back in 2013, and since then we’ve relentlessly increased code quality, features and test coverage, and are proud to say that we have almost zero legacy code or technical debt. We believe a modular monolithic architecture can reach a level of perfection where it’s superior to a micro-service architecture — despite an ever-increasing number of features.
 
 
-### ⚙️ Developers
+# ⚙️ Our Stack
 
-Here, on GitHub we build with ❤️ love our main product — online courses platform. Our main stack is:
+Here, on GitHub we write code with ❤️. Our main stack is:
 
- - PHP/Laravel (always latest versions)
- - Redis, MySQL
- - Horizon, Nova
- - Web Components, PostCSS (to maximise usage of native platform features) and Vue.js.
+- PHP 8.1 and Laravel 8 (always the latest versions)
+- Vanilla JavaScript (incl. Web Components) and Vue.js for Laravel Nova
+- Server: Docker, nginx
+- DBs: MySQL, Redis
+- Testing: PHPUnit, Laravel Dusk, cypress.io
+- Cloud: Amazon S3, CloudFront
+- CI/CD: GitHub actions + Deployer
 
-We love to delegate boring tasks to computers (static analysers (Psalm, PHPStan, Rector), bots, scripts, testing).
+We love to delegate boring tasks to our non-human colleagues — like static analysers (Psalm, PHPStan, Rector), bots, scripts, and test code.
 
-
-#### Materials
- - [Careers](https://www.interaction-design.org/about/careers)
+# ⚙️ Our Code Conventions and Dev Handbook
+ - [IxDF Design System](https://design-system.interaction-design.org/)
+ - [IxDF PHP Conventions](https://handbook.interaction-design.org/library/back-end/conventions--php.html)
+ - [IxDF Laravel Conventions](https://handbook.interaction-design.org/library/back-end/conventions--laravel.html)
+ - [IxDF JavaScript Conventions](https://handbook.interaction-design.org/library/front-end/conventions--js.html)
  - [Dev handbook](https://handbook.interaction-design.org/)
+
+# 🔥 Get to know our Work Culture - and join our team! 
+ - [More about our work culture and open positions](https://www.interaction-design.org/about/careers)
+ 
