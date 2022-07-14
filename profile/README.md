@@ -17,13 +17,13 @@ We're constantly improving and expanding our main product — a web application 
 
 Here, on GitHub we write code with ❤️. Our main stack is:
 
-- PHP 8.1 and Laravel 9 (always the latest versions)
-- Vanilla JavaScript (incl. Web Components) and Vue.js for Laravel Nova
-- Server: Docker, nginx
-- DBs: MySQL, Redis
-- Testing: PHPUnit, Behat, Laravel Dusk, cypress.io
-- Cloud: Amazon S3, CloudFront
-- CI/CD: GitHub Actions + Deployer
+- **PHP 8.1** and **Laravel 9** (always the latest versions)
+- **Vanilla JavaScript** (incl. Web Components) and **Vue.js** for Laravel Nova
+- **Server**: Docker, nginx
+- **DBs**: MySQL, Redis
+- **Testing**: PHPUnit, Behat, Laravel Dusk, cypress.io
+- **Cloud**: Amazon S3, CloudFront
+- **CI/CD**: GitHub Actions + Deployer
 
 We love to delegate boring tasks to our non-human colleagues — like static analysers (Psalm, PHPStan, Rector), bots, scripts, and test code.
 
