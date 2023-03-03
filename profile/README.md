@@ -17,7 +17,7 @@ We're constantly improving and expanding our main product — a web application 
 
 Here, on GitHub we write code with ❤️. Our main stack is:
 
-- **PHP 8.1** and **Laravel 9** (always the latest versions)
+- **PHP 8.2** and **Laravel 10** (always the latest versions)
 - **Vanilla JavaScript** (incl. Web Components) and **Vue.js** for Laravel Nova
 - **Server**: Docker, nginx
 - **DBs**: MySQL, Redis
