@@ -24,7 +24,7 @@
     ]
   },
   "platformAutomerge": true,
-  "prFooter": "[Read more information](https://github.com/InteractionDesignFoundation/.github/blob/main/RENOVATE.md) about the use of [Renovate Bot](https://github.com/renovatebot/renovate) within Laminas.",
+  "prFooter": "[Read more information](https://github.com/InteractionDesignFoundation/.github/blob/main/RENOVATE.md) about the use of [Renovate Bot](https://github.com/renovatebot/renovate) within InteractionDesignFoundation.",
   "rangeStrategy": "replace",
   "rollbackPrs": true,
   "vulnerabilityAlerts": {
