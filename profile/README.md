@@ -29,9 +29,9 @@ We love to delegate boring tasks to our non-human colleagues — like static ana
 
 # 🛠 Our Code Conventions and Dev Handbook
  - [IxDF Design System](https://design-system.interaction-design.org/)
- - [IxDF PHP Conventions](https://handbook.interaction-design.org/library/back-end/conventions--php.html)
- - [IxDF Laravel Conventions](https://handbook.interaction-design.org/library/back-end/conventions--laravel.html)
- - [IxDF JavaScript Conventions](https://handbook.interaction-design.org/library/front-end/conventions--js.html)
+ - [IxDF PHP Conventions](https://handbook.interaction-design.org/development/library/back-end/conventions--php.html)
+ - [IxDF Laravel Conventions](https://handbook.interaction-design.org/development/library/back-end/conventions--laravel.html)
+ - [IxDF JavaScript Conventions](https://handbook.interaction-design.org/development/library/front-end/conventions--js.html)
  - [Dev handbook](https://handbook.interaction-design.org/)
 
 # ❤️ Why do devs love to work with us?
