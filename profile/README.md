@@ -17,15 +17,20 @@ We're constantly improving and expanding our main product — a web application 
 
 Here, on GitHub we write code with ❤️. Our main stack is:
 
-- **PHP 8.3** and **Laravel 10** (always the latest versions)
-- **Vanilla JavaScript** (incl. Web Components) and **Vue.js** for Laravel Nova
-- **Server**: Docker, nginx
+- **PHP 8.3** and **Laravel 10** (we're upgrading Laravel to the latest)
+- **Web Components**, **Htmx**, **Vue.js**, **Tailwind**, **Vite**
+- **Server**: Laravel Forge, Docker, Linux, nginx
 - **DBs**: MySQL, Redis
-- **Testing**: PHPUnit, Behat, Laravel Dusk, cypress.io
-- **Cloud**: Amazon S3, CloudFront
-- **CI/CD**: GitHub Actions + Deployer
+- **Testing**: PHPUnit, Laravel Dusk, cypress.io
+- **CI/CD**: GitHub Actions + Deployer -- Zero down-time deployments
+- **Code Quality**: Psalm (max-level), PHPStan(max-level), Rector, PHP-CS-Fixer, phpcs, deptrac, PHPCPD, ESLint
+- **APM & Logging**: NewRelic, CloudWatch, Bugsnag, Athena
+- **Cloud**: AWS, GCP, Digital Ocean
+- **CDN**: Amazon S3, CloudFront, ImageKit
+- **Integrations**: Stripe, AmazonPay, ApplePay, PayPal, Slack, Mailgun, MailerLite, Twilio, and many more..!
 
-We love to delegate boring tasks to our non-human colleagues — like static analysers (Psalm, PHPStan, Rector), bots, scripts, and test code.
+
+We love to delegate boring tasks to our non-human colleagues — like static analysers (Psalm, PHPStan, Rector), bots, scripts, and automated tests.
 
 # 🛠 Our Code Conventions and Dev Handbook
  - [IxDF PHP Conventions](https://handbook.interaction-design.org/library/backend/conventions--php.html)
@@ -33,7 +38,7 @@ We love to delegate boring tasks to our non-human colleagues — like static ana
  - [IxDF JavaScript Conventions](https://handbook.interaction-design.org/library/frontend/conventions--js.html)
  - [Dev handbook](https://handbook.interaction-design.org/)
 
-# ❤️ Why do devs love to work with us?
+# ❤️ Want to join us?
 
 Are you an awesome PHP developer who is **looking for a truly challenging role** in a growing dev team? Do you wish to **use your coding superpowers for a good cause** and help improve the lives of millions of people around the world? Do you want to work with **a team that values your insights and contributions** to a dynamic product with an exciting future? 
 
@@ -45,4 +50,3 @@ We’re proud to say that **we’ve put together an amazing team of unicorns** w
 
 # 🔥 Get to know our Work Culture - and join our team! 
  - [More about our work culture and open positions](https://www.interaction-design.org/about/careers)
- 
