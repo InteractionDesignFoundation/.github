@@ -28,9 +28,9 @@ Here, on GitHub we write code with ❤️. Our main stack is:
 We love to delegate boring tasks to our non-human colleagues — like static analysers (Psalm, PHPStan, Rector), bots, scripts, and test code.
 
 # 🛠 Our Code Conventions and Dev Handbook
- - [IxDF PHP Conventions](https://handbook.interaction-design.org/library/backend/conventions--php.html)
- - [IxDF Laravel Conventions](https://handbook.interaction-design.org/library/backend/conventions--laravel.html)
- - [IxDF JavaScript Conventions](https://handbook.interaction-design.org/library/frontend/conventions--js.html)
+ - [IxDF PHP Conventions](https://handbook.interaction-design.org/library/backend/IxDF-PHP-conventions.html)
+ - [IxDF Laravel Conventions](https://handbook.interaction-design.org/library/backend/IxDF-Laravel-conventions.html)
+ - [IxDF JavaScript Conventions](https://handbook.interaction-design.org/library/frontend/IxDF-JS-conventions.html)
  - [Dev handbook](https://handbook.interaction-design.org/)
 
 # ❤️ Why do devs love to work with us?
