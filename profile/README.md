@@ -16,15 +16,20 @@ We're constantly improving and expanding our main product — a web application 
 
 # ⚙️ Our Stack
 
-Here, on GitHub we write code with ❤️. Our main stack is:
+#UseThePlatform. We focus on enduring technologies over the latest fleeting frameworks so that our developers' knowledge continually grows instead of becoming outdated after each trend has passed. This philosophy allows us to build robust, maintainable and beautiful code that stands the test of time rather than chasing the latest hype. Some of our key technologies include: 
 
-- **PHP 8.3** and **Laravel 11** (always the latest versions)
-- **Vanilla JavaScript** (incl. Web Components) and **Vue.js** for Laravel Nova
-- **Server**: Docker, nginx
-- **DBs**: MySQL, Redis
-- **Testing**: PHPUnit, Pest, Laravel Dusk, cypress.io
-- **Cloud**: Amazon S3, CloudFront
-- **CI/CD**: GitHub Actions + Deployer
+- Always latest PHP and Laravel versions 
+- Modular monolith comprising 30+ bounded contexts 
+- Laravel ecosystem: Horizon, Nova, Scout, Pennant, Passport, Inertia, and more 
+- Web Components, Htmx, Tailwind, Vue.js, Inertia.js, Vite 
+- Server: Docker, Sail, Octane, Forge, nginx 
+- DBs: MySQL 8, Redis (Pub/Sub, Cache, Queue Driver) 
+- Testing: PHPUnit, Laravel Dusk, Cypress 
+- Advanced CI/CD: GitHub actions,Deployer, Bash 
+- Code Quality: Psalm, PHPStan, Rector, PHPCS, PHP_CS_Fixer, Phpcpd 
+- Integrations: Stripe, PayPal, Amazon Pay, Twilio, Mailgun, MailerLite, GitHub, Forge, Coconut, ImageKit, and more 
+- Cloud: AWS, GCP, Digital Ocean 
+- APM & Monitoring: NewRelic, CloudWatch, BugSnag, GTMetrix 
 
 We love to delegate boring tasks to our non-human colleagues — like static analysers (Psalm, PHPStan, Rector), bots, scripts, and test code.
 
