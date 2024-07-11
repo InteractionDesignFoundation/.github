@@ -1,3 +1,5 @@
+## 👋 Hey, this is us
+
 ![image](./banner.png)
 
 | [![Apply Now](./apply-to-ixdf.png)](https://www.interaction-design.org/about/careers) | [![IxDF Open Handbookn](./ixdf-open-handbook.png)](https://handbook.interaction-design.org/) |
