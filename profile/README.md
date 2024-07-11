@@ -1,6 +1,6 @@
-## 👋 Hey, this is us
+![image](./banner.png)
 
-![image](https://user-images.githubusercontent.com/2339481/145277915-3b4d53a4-24a0-4e1e-afa8-abdc21bbc819.jpg)
+[![Apply Now](./apply-to-ixdf.png)](https://www.interaction-design.org/about/careers)[![IxDF Open Handbookn](./ixdf-open-handbook.png)](https://handbook.interaction-design.org/)
 
 # 👤 Who are the IxDF?
 
@@ -45,4 +45,3 @@ We’re proud to say that **we’ve put together an amazing team of unicorns** w
 
 # 🔥 Get to know our Work Culture - and join our team! 
  - [More about our work culture and open positions](https://www.interaction-design.org/about/careers)
- 
