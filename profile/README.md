@@ -33,7 +33,7 @@ The IxDF web is a multi-page application—an MVC-based, modular monolith, **com
 - Advanced CI/CD: GitHub actions, Deployer, Bash
 - Code Quality: Psalm, PHPStan, Rector, PHPCS, PHP CS Fixer
 - Integrations: Stripe, PayPal, Amazon Pay, Twilio, Mailgun, MailerLite, GitHub, Forge, Coconut, ImageKit, and more 
-- Cloud: AWS, Digital Ocean
+- Cloud: AWS, DigitalOcean
 - APM & Monitoring: NewRelic, CloudWatch, BugSnag, GTMetrix 
 
 We love to delegate boring tasks to our non-human colleagues—like static analyzers (Psalm, PHPStan, Rector), bots, scripts, and test code.
