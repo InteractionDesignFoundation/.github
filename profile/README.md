@@ -3,7 +3,7 @@
 | [![Apply Now](./apply-to-ixdf.png)](https://www.interaction-design.org/about/careers) | [![IxDF Open Handbookn](./ixdf-open-handbook.png)](https://handbook.interaction-design.org/) |
 |---------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------|
 
-# IxDF who? 🤔
+# IxDF Who? 🤔
 
 The Interaction Design Foundation is the **global leader in online design education**. Founded in 2002, we have over 175,000 members and counting. We hold the trust of industry giants like Adobe and IBM, who rely on our courses to train their teams.
 
@@ -44,14 +44,14 @@ We love to delegate boring tasks to our non-human colleagues—like static analy
  - [IxDF JavaScript Conventions](https://handbook.interaction-design.org/library/frontend/conventions--js.html)
  - [Dev handbook](https://handbook.interaction-design.org/)
 
-# 🌎 Remote work. Real impact.
+# 🌎 Remote Work. Real Impact.
 
 We were an all-remote organization before that term even existed. In fact, we’ve been perfecting remote work for 22 years! You can count on having full control of your schedule to block out focus time for deep concentration work. Your gender or ethnicity bear no significance on your work—only your output does! So those who are truly passionate about their craft with a bias towards action thrive in our environment. 
 
 *“One can choose to go back toward safety or forward toward growth. Growth must be chosen again and again; fear must be overcome again and again. — Abraham Maslow*
 
 
-# ❤️ Why devs love to work with us
+# ❤️ Why Devs Love to Work With Us
 
 Ever wish your CEO encouraged you to write more automated tests? Or even just understood their importance? Want to work where clean code isn't a luxury but a priority?
 
