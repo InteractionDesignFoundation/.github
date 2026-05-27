@@ -1,6 +1,6 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "description": "Default Renovate config for InteractionDesignFoundation repositories. Security-critical defaults: config:best-practices preset, OSV vulnerability alerts, pinned Docker and GitHub Action digests, weekly lockfile maintenance, sequential major release PRs.",
+  "description": "Default Renovate config for InteractionDesignFoundation repositories. Security-critical defaults: config:best-practices preset, OSV vulnerability alerts, pinned Docker and GitHub Action digests, weekly lockfile maintenance, sequential major release PRs, non-office-hours schedule.",
   "extends": [
     "config:best-practices",
     "group:allNonMajor",
@@ -9,16 +9,16 @@
     ":automergeMinor",
     ":automergeBranch",
     ":rebaseStalePrs",
-    ":semanticCommitsDisabled",
     ":enableVulnerabilityAlerts",
     ":timezone(UTC)",
     ":gitSignOff",
-    ":label(dependencies)"
+    ":label(dependencies)",
+    "schedule:nonOfficeHours"
   ],
   "osvVulnerabilityAlerts": true,
   "commitBodyTable": true,
   "platformAutomerge": true,
-  "prFooter": "[Read more information](https://github.com/InteractionDesignFoundation/.github/blob/main/RENOVATE.md) about the use of [Renovate Bot](https://github.com/renovatebot/renovate) within InteractionDesignFoundation.",
+  "prBodyTemplate": "{{{header}}}\n\n> :books: [IxDF Renovate configuration](https://github.com/InteractionDesignFoundation/.github/blob/main/RENOVATE.md) • security PRs are labelled `security` and require manual review.\n\n{{{table}}}\n\n{{{warnings}}}\n\n{{{notes}}}\n\n{{{changelogs}}}\n\n{{{configDescription}}}\n\n{{{controls}}}",
   "rangeStrategy": "replace",
   "rollbackPrs": true,
   "vulnerabilityAlerts": {
