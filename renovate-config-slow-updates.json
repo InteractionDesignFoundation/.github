@@ -1,0 +1,24 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "description": "Slow-updates Renovate config for low-priority InteractionDesignFoundation repositories. Monthly schedule, all non-security updates grouped into a single PR, longer minimumReleaseAge, manual merge. Vulnerability alerts inherited from the default preset stay active.",
+  "extends": [
+    "local>InteractionDesignFoundation/.github:renovate-config",
+    "schedule:monthly",
+    ":maintainLockFilesMonthly"
+  ],
+  "minimumReleaseAge": "21 days",
+  "prConcurrentLimit": 3,
+  "prHourlyLimit": 2,
+  "separateMajorMinor": false,
+  "separateMultipleMajor": false,
+  "separateMinorPatch": false,
+  "packageRules": [
+    {
+      "description": "Group every non-security dependency update into a single monthly PR with manual review.",
+      "matchUpdateTypes": ["major", "minor", "patch", "pin", "digest"],
+      "groupName": "all dependencies",
+      "groupSlug": "all-dependencies",
+      "automerge": false
+    }
+  ]
+}

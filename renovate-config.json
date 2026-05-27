@@ -1,28 +1,22 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "description": "Default configuration for repositories in the InteractionDesignFoundation organisation",
+  "description": "Default Renovate config for InteractionDesignFoundation repositories. Security-critical defaults: config:best-practices preset, OSV vulnerability alerts, pinned Docker and GitHub Action digests, weekly lockfile maintenance, sequential major release PRs.",
   "extends": [
-    ":dependencyDashboard",
-    ":ignoreModulesAndTests",
+    "config:best-practices",
+    "group:allNonMajor",
+    ":separateMultipleMajorReleases",
+    ":combinePatchMinorReleases",
     ":automergeMinor",
     ":automergeBranch",
     ":rebaseStalePrs",
     ":semanticCommitsDisabled",
-    ":separateMajorReleases",
-    ":combinePatchMinorReleases",
     ":enableVulnerabilityAlerts",
     ":timezone(UTC)",
     ":gitSignOff",
-    ":label(dependencies)",
-    "group:allNonMajor"
+    ":label(dependencies)"
   ],
+  "osvVulnerabilityAlerts": true,
   "commitBodyTable": true,
-  "lockFileMaintenance": {
-    "enabled": true,
-    "extends": [
-      "schedule:weekly"
-    ]
-  },
   "platformAutomerge": true,
   "prFooter": "[Read more information](https://github.com/InteractionDesignFoundation/.github/blob/main/RENOVATE.md) about the use of [Renovate Bot](https://github.com/renovatebot/renovate) within InteractionDesignFoundation.",
   "rangeStrategy": "replace",
@@ -33,6 +27,6 @@
       ":automergePr",
       ":labels(Awaiting Maintainer Response, security)"
     ],
-    "rangeStrategy": "bump"
+    "rangeStrategy": "update-lockfile"
   }
 }

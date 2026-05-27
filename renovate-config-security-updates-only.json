@@ -1,12 +1,20 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "description": "Configuration for repositories marked 'security-updates-only' in the InteractionDesignFoundation organisation",
+  "description": "Security-updates-only Renovate config for InteractionDesignFoundation repositories. Extends the default preset, disables all non-security updates, keeps PHP runtime updates enabled. Vulnerability alerts remain active.",
   "extends": [
     "local>InteractionDesignFoundation/.github:renovate-config",
     ":maintainLockFilesDisabled"
   ],
   "packageRules": [
-    {"matchPackagePatterns": ["*"], "enabled": false},
-    {"matchPackageNames": ["php"], "enabled": true}
+    {
+      "description": "Disable every package by default; only vulnerabilityAlerts and the allowlist below run.",
+      "matchPackageNames": ["*"],
+      "enabled": false
+    },
+    {
+      "description": "Allow PHP runtime updates so composer platform requirements stay current.",
+      "matchPackageNames": ["php"],
+      "enabled": true
+    }
   ]
 }

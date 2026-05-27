@@ -1,145 +1,127 @@
 # Renovate
 
-This repository contains the following shared configurations for Renovate, a tool to automate dependency updates which
-would be available as a [shareable preset](https://docs.renovatebot.com/config-presets/).
-- A default `renovate-config.json` file for general use in all repositories.
-- A `renovate-config-security-updates-only.json` file for use in InteractionDesignFoundation repositories marked "security-updates-only".
+Shared [Renovate](https://github.com/renovatebot/renovate) presets for InteractionDesignFoundation repositories. Distributed as [shareable presets](https://docs.renovatebot.com/config-presets/).
 
-## Default Configuration
+Three configs:
 
-By calling the file `renovate-config.json` and placing it in this repository, we can take advantage of Renovate
-detecting this, allowing easy
-[onboarding](https://docs.renovatebot.com/getting-started/installing-onboarding/#repository-onboarding) for
-repositories.
+| File | Use case |
+| --- | --- |
+| `renovate-config.json` | Default. Security critical. Frequent updates, OSV alerts, pinned digests, weekly lockfile maintenance. |
+| `renovate-config-slow-updates.json` | Low priority repos. Monthly schedule, everything grouped into one PR, manual merge. |
+| `renovate-config-security-updates-only.json` | Frozen repos. Only security and PHP runtime updates run. |
 
-### Goals
+## Onboarding
 
-The default configuration has the following goals for a shared preset:
-
-- a single PR for anything non-major that doesn't fit the current version constraints. (e.g. coding standards)
-- a PR for any new majors grouped by org.
-- otherwise, the lockfile is updated and automatically merged once tests pass, opening a PR only if those fail.
-
-### Next steps for downstream maintainers
-
-Once the Mend Renovate GitHub app is enabled for a repository, a new `Configure Renovate` PR will be opened
-containing a basic `renovate.json` file with the following contents:
+Mend Renovate app opens a `Configure Renovate` PR. Replace its body with one of:
 
 ```json
 {
-    "extends": [
-        "local>InteractionDesignFoundation/.github:renovate-config"
-    ]
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["local>InteractionDesignFoundation/.github:renovate-config"]
 }
 ```
 
-In order to be fully compatible with this Renovate configuration, you must ensure the following criteria are met:
-1. CI actions are enabled for `push` events on branches with the prefix `renovate/*`.
-2. The lockfile must have been generated using Composer with a version `>=2.2`.
-3. Lastly, for Renovate to detect the correct version of PHP to use for lockfile maintenance, the PHP version must be
-   set in `composer.json` under the key [`config.platform.php`](https://getcomposer.org/doc/06-config.md#platform).
-
-### Presets
-
-Using primarily the inbuilt shared presets, this allows us to somewhat overcome the need to upgrade our configuration as
-often when Renovate updates a major version. Take for example: `":automergeDisabled"`, this will add the configuration
-`"automerge": false`. Should Renovate update this in a major version bump, they will also update the preset. So where
-possible presets have been chosen.
-
 ```json
-"extends": [
-    ":dependencyDashboard",
-    ":ignoreModulesAndTests",
-    ":automergeMinor",
-    ":automergeBranch",
-    ":rebaseStalePrs",
-    ":semanticCommitsDisabled",
-    ":separateMajorReleases",
-    ":combinePatchMinorReleases",
-    ":enableVulnerabilityAlerts",
-    ":timezone(UTC)",
-    ":gitSignOff",
-    ":label(renovate)",
-    "group:allNonMajor"
-],
-```
-
-- **[:dependencyDashboard](https://docs.renovatebot.com/presets-default/#dependencydashboard)** - This will open a
-persistent issue in each repository to allow easy tracking of all Renovate updates.
-- **[:ignoreModulesAndTests](https://docs.renovatebot.com/presets-default/#ignoremodulesandtests)** - This ensures
-Renovate does not try to update `composer.json` inside `tests/`, `vendor/` etc.
-- **[:automergeMinor](https://docs.renovatebot.com/presets-default/#automergeminor)** - Automatically merge non-major
-updates of updates by default.
-- **[:automergeBranch](https://docs.renovatebot.com/presets-default/#automergebranch)** - But set the default automatic
-merge type to be `branch` meaning a PR is only opened on failure.
-- **[:rebaseStalePrs](https://docs.renovatebot.com/presets-default/#rebasestaleprs)** - Any PRs previously opened by
-Renovate will be automatically rebased should they fall behind.
-- **[:semanticCommitsDisabled](https://docs.renovatebot.com/presets-default/#semanticcommitsdisabled)** - Disable semantic
-prefixes for commit messages and PR titles.
-- **[:separateMajorReleases](https://docs.renovatebot.com/presets-default/#separatemajorreleases)** - Any new major
-releases for a package will be separated into its own update.
-- **[:combinePatchMinorReleases](https://docs.renovatebot.com/presets-default/#combinepatchminorreleases)** - Patch and
-minor releases for a single package will be combined to a single update.
-- **[:enableVulnerabilityAlerts](https://docs.renovatebot.com/presets-default/#enablevulnerabilityalerts)** - Open a PR
-should the repository have any vulnerability alerts (see below).
-- **[:timezone(UTC)](https://docs.renovatebot.com/presets-default/#timezonearg0)** - Not strictly necessary but ensures
-schedules use the UTC timezone.
-- **[:gitSignOff](https://docs.renovatebot.com/presets-default/#gitsignoff)** - DCO requires all commits to be signed
-off.
-- **[:label(renovate)](https://docs.renovatebot.com/presets-default/#labelarg0)** - Add the label `renovate` to any PRs.
-- **[group:allNonMajor](https://docs.renovatebot.com/presets-group/#groupallnonmajor)** - Any non-major updates will be
-grouped into a single update.
-
-#### Vulnerability Alerts
-
-From https://docs.renovatebot.com/configuration-options/#vulnerabilityalerts:
-
-> Renovate can read from GitHub's Vulnerability Alerts and customize Pull Requests accordingly. For this to work, you
-> must first ensure you have enabled "Dependency graph" and "Dependabot alerts" under the "Security & analysis" section
-> of the repository's "Settings" tab.
->
-> Additionally, if you are running Renovate in app mode then you must make sure that the app has been granted the
-> permissions to read "Vulnerability alerts". If you are the account admin, browse to the app (e.g.
-> https://github.com/apps/renovate), select "Configure", and then scroll down to the "Permissions" section and verify
-> that read access to "vulnerability alerts" is mentioned.
->
-> Once the above conditions are met, and you have received one or more vulnerability alerts from GitHub for this
-> repository, then Renovate will attempt to raise fix PRs accordingly.
-
-### Other Settings
-
-```json
-"commitBodyTable": true,
-"lockFileMaintenance": {"enabled": true, "extends": ["schedule:daily"]},
-"platformAutomerge": true,
-"prFooter": "[Read more information](https://github.com/InteractionDesignFoundation/.github/blob/main/RENOVATE.md) about the use of [Renovate Bot](https://github.com/renovatebot/renovate) within InteractionDesignFoundation.",
-"rangeStrategy": "replace",
-"rollbackPrs": true,
-"vulnerabilityAlerts": {
-    "extends": [":automergeDisabled", ":automergePr", ":labels(Awaiting Maintainer Response, security)"],
-    "rangeStrategy": "bump"
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["local>InteractionDesignFoundation/.github:renovate-config-slow-updates"]
 }
 ```
 
-- **[commitBodyTable](https://docs.renovatebot.com/configuration-options/#commitbodytable)** - Adds a table to the
-commit message describing all updates in the commit.
-- **[lockFileMaintenance](https://docs.renovatebot.com/configuration-options/#lockfilemaintenance)** - Lockfile
-maintenance should be performed during the scheduled run.
-- **[platformAutomerge](https://docs.renovatebot.com/configuration-options/#platformautomerge)** - Use GitHub's merging
-features, falling back to Renovate's own merging methods.
-- **[prFooter](https://docs.renovatebot.com/configuration-options/#prfooter)** - The text here will be set as the footer
-to any PR opened by Renovate. 
-- **[rangeStrategy](https://docs.renovatebot.com/configuration-options/#rangestrategy)** - Setting this to `replace`
-ensures that PRs are only created once the new release falls outside the version constraints inside `composer.json`.
-- **[rollbackPrs](https://docs.renovatebot.com/configuration-options/#rollbackprs)** - A rare occurrence, but should a
-package become revoked, a PR to downgrade the package will be created.
-- **[vulnerabilityAlerts](https://docs.renovatebot.com/configuration-options/#vulnerabilityalerts)** - Vulnerability
-alerts, enabled by a previous preset, will use a `rangeStrategy` of `update-lockfile` by default. This ensures that
-`composer.json` files are updated also, and that manual intervention is required by the maintainer to tag a new minor.
+```json
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["local>InteractionDesignFoundation/.github:renovate-config-security-updates-only"]
+}
+```
+
+## Repo requirements
+
+1. CI runs on `push` to branches matching `renovate/*`.
+2. Composer lockfile generated with Composer >= 2.2.
+3. PHP version set in `composer.json` at [`config.platform.php`](https://getcomposer.org/doc/06-config.md#platform).
+
+## Default config (`renovate-config.json`)
+
+Built on Renovate's [`config:best-practices`](https://docs.renovatebot.com/presets-config/#configbest-practices) preset (recommended for advanced users). It pulls in:
+
+* `config:recommended` (dependency dashboard, monorepo grouping, ignore tests, changelog helpers).
+* `docker:pinDigests`, `helpers:pinGitHubActionDigests` (pin Docker images and GitHub Actions to SHAs).
+* `:pinDevDependencies` (pin dev deps for reproducible builds).
+* `:configMigration` (auto PR when config options get deprecated).
+* `abandonments:recommended` (flag abandoned packages).
+* `security:minimumReleaseAgeNpm` (3 day wait on npm, malware window).
+* `:maintainLockFilesWeekly` (refresh lockfile weekly).
+
+Additional presets on top:
+
+| Preset | Effect |
+| --- | --- |
+| `group:allNonMajor` | One PR per scheduled run for all non major updates. |
+| `:separateMultipleMajorReleases` | One PR per intermediate major version (e.g. v1 to v2, v2 to v3 separately). |
+| `:combinePatchMinorReleases` | Patch and minor for the same package combined. |
+| `:automergeMinor` | Non major automerged once tests pass. |
+| `:automergeBranch` | Automerge type is branch (PR only opens on test failure). |
+| `:rebaseStalePrs` | Stale PRs rebased automatically. |
+| `:semanticCommitsDisabled` | No semantic commit prefixes. |
+| `:enableVulnerabilityAlerts` | Open PRs for GitHub Vulnerability Alerts. |
+| `:timezone(UTC)` | Schedules use UTC. |
+| `:gitSignOff` | Sign off commits (DCO). |
+| `:label(dependencies)` | Label PRs with `dependencies`. |
+
+Top level options:
+
+| Option | Value | Why |
+| --- | --- | --- |
+| `osvVulnerabilityAlerts` | `true` | OSV database alerts for direct deps. Catches malicious packages. |
+| `commitBodyTable` | `true` | Update table in commit body. |
+| `platformAutomerge` | `true` | Use GitHub native merge, fall back to Renovate. |
+| `rangeStrategy` | `"replace"` | PR only when new version falls outside `composer.json` constraint. |
+| `rollbackPrs` | `true` | If a package is revoked, downgrade PR opens. |
+| `vulnerabilityAlerts.rangeStrategy` | `"update-lockfile"` | Patch lockfile only, ship security fix fast, no manifest churn. |
+| `vulnerabilityAlerts.extends` | manual review presets | Security PRs require human review and carry security labels. |
+
+### Vulnerability alerts setup
+
+Required on each consuming repo:
+
+1. Enable **Dependency graph** and **Dependabot alerts** under Settings, Security and analysis.
+2. Grant the Renovate app read access to **Vulnerability alerts** in app permissions.
+3. From then on Renovate raises fix PRs when GitHub reports vulnerabilities.
+
+Details: [renovatebot docs](https://docs.renovatebot.com/configuration-options/#vulnerabilityalerts).
+
+## Slow updates config (`renovate-config-slow-updates.json`)
+
+For repos with rare updates and lower security stakes. Extends the default preset, then overrides:
+
+| Option | Value | Why |
+| --- | --- | --- |
+| `extends: schedule:monthly` | first of month, before 04:00 UTC | One run per month. |
+| `extends: :maintainLockFilesMonthly` | monthly lockfile refresh | Less churn than the default weekly. |
+| `minimumReleaseAge` | `"21 days"` | Wait 3 weeks before flagging any update. Extra stability. |
+| `prConcurrentLimit` | `3` | Cap open Renovate PRs. |
+| `prHourlyLimit` | `2` | Throttle PR creation. |
+| `separateMajorMinor` / `separateMultipleMajor` / `separateMinorPatch` | `false` | Merge all update types into one PR. |
+| `packageRules` | groupName `all dependencies`, `automerge: false` | One monthly PR with manual review. |
+
+Vulnerability alerts from the default preset still apply. Critical security PRs are not gated by the monthly schedule.
+
+## Security only config (`renovate-config-security-updates-only.json`)
+
+For frozen repos. Extends the default, disables lockfile maintenance, then via `packageRules` disables every package and re enables PHP runtime.
+
+| Rule | Effect |
+| --- | --- |
+| `matchPackageNames: ["*"], enabled: false` | No normal updates. |
+| `matchPackageNames: ["php"], enabled: true` | PHP platform version stays current. |
+| Inherited `vulnerabilityAlerts` | Security PRs still raised. |
 
 ## Links
 
-[Renovate on GitHub](https://github.com/renovatebot/renovate)
-[Renovate Documentation](https://docs.renovatebot.com)
-[Mend Renovate website](https://www.mend.io/free-developer-tools/renovate/)
-[Mend Renovate GitHub app](https://github.com/marketplace/renovate)
+* [Renovate on GitHub](https://github.com/renovatebot/renovate)
+* [Renovate docs](https://docs.renovatebot.com)
+* [Upgrade best practices](https://docs.renovatebot.com/upgrade-best-practices/)
+* [`config:best-practices` preset](https://docs.renovatebot.com/presets-config/#configbest-practices)
+* [Mend Renovate website](https://www.mend.io/free-developer-tools/renovate/)
+* [Mend Renovate GitHub app](https://github.com/marketplace/renovate)
