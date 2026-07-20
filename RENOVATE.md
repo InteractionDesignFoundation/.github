@@ -61,7 +61,7 @@ Additional presets on top:
 | `:separateMultipleMajorReleases` | One PR per intermediate major version (e.g. v1 to v2, v2 to v3 separately). |
 | `:combinePatchMinorReleases` | Patch and minor for the same package combined. |
 | `:automergeMinor` | Non major automerged once tests pass. |
-| `:automergeBranch` | Automerge type is branch (PR only opens on test failure). |
+| `:automergePr` | Automerge type is PR. Renovate always opens a PR and lets GitHub auto-merge it once required checks pass. Branch automerge is deliberately not used: most repos scope their CI workflows to `pull_request`, so a branch with no PR gets zero checks, GitHub reports the commit status as `pending` forever, and the update never merges and never surfaces as a PR. |
 | `:rebaseStalePrs` | Stale PRs rebased automatically. |
 | `:enableVulnerabilityAlerts` | Open PRs for GitHub Vulnerability Alerts. |
 | `:timezone(UTC)` | Schedules use UTC. |

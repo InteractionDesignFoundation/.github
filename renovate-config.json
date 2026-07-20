@@ -7,7 +7,7 @@
     ":separateMultipleMajorReleases",
     ":combinePatchMinorReleases",
     ":automergeMinor",
-    ":automergeBranch",
+    ":automergePr",
     ":rebaseStalePrs",
     ":enableVulnerabilityAlerts",
     ":timezone(UTC)",
